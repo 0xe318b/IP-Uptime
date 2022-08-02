@@ -1,4 +1,3 @@
-import socket
 from icmplib import ping
 import time
 import threading
@@ -19,16 +18,16 @@ def x():
             if i.find("Packetloss") == 0:
                 loss = i.replace("Packetloss:","").replace("%","")
                 if float(loss) == 100:
-                    print(c.RED+"IP IS DOWN!",str(float(loss))+"%")
+                    print(c.RED+"IP IS DOWN! | Packet loss: ",str(float(loss))+"%")
                 elif float(loss) >= 80 and float(loss) <= 65:
-                    print(c.LIGHTRED_EX+"IP IS DANGEROUSLY CLOSE TO BEING DOWN!",str(float(loss))+"%")
+                    print(c.LIGHTRED_EX+"IP IS DANGEROUSLY CLOSE TO BEING DOWN! | Packet loss: ",str(float(loss))+"%")
                 elif float(loss) <= 64 and float(loss) >= 35:
-                    print(c.YELLOW+"IP IS DECENT!",str(float(loss))+"%")
+                    print(c.YELLOW+"IP IS DECENT! | Packet loss: ",str(float(loss))+"%")
                 else:
-                    print(c.GREEN+"IP IS UP |",str(float(loss))+"%")
+                    print(c.GREEN+"IP IS UP | Packet loss: ",str(float(loss))+"%")
     except:
         pass
 threading.Thread(target=x).start()
-for i in range(50000):
+while True:
     time.sleep(0.5)
     threading.Thread(target=x).start()
