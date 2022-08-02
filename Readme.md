@@ -4,8 +4,10 @@
 These are what your need to install
 <br />icmplib
 <br />colorama
+
 <br />*You dont need to use pip for these*
-time
-threading
+
+<br />time
+t<br />hreading
 
 *How to use*
