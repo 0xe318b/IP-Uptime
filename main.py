@@ -8,7 +8,8 @@ from colorama import Fore as c
 def x():
     
     ###########################
-    IP = '255.255.255.255.255'
+    IP = 'change me'
+    # change IP to an ip you want to monitor then run it
     ###########################
     
     try:
